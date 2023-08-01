@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import html from '@/img/html.jpg'
-import react from '@/img/react.jpg'
+import react from '@/img/React.jpg'
 import css from '@/img/css.jpg'
 import js from '@/img/js.jpg'
 import tailwind from '@/img/tailwindcss.jpg'
