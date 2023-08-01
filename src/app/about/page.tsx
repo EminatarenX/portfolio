@@ -1,9 +1,9 @@
 import Imagenes from "@/components/Imagenes"
-import EmiImg from '../../../public/emi.jpg'
+import EmiImg from '@/img/emi.jpg'
 import Image from "next/image"
-import indexC from '../../../public/index-ec.jpg'
-import matchmaster from '../../../public/matchmaster.jpg'
-import github from '../../../public/git.png'
+import indexC from '@/img/index-ec.jpg'
+import matchmaster from '@/img/matchmaster.jpg'
+import github from '@/img/git.png'
 
 export default function page() {
   return (

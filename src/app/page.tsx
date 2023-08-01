@@ -1,7 +1,7 @@
 import Image from "next/image"
-import Emi from '../../public/emi-developer.jpg'
-import github from '../../public/git.png'
-import instagram from '../../public/instagram.png'
+import EmiInicio from '@/img/emi-developer.jpg'
+import github from '@/img/git.png'
+import instagram from '@/img/instagram.png'
 export default function Home() {
   return (
     <main className="pt-10 lg:p-40 fixed flex h-screen w-full flex-col bg-gradient-to-tr  from-sky-100 to-sky-500">
@@ -40,7 +40,7 @@ export default function Home() {
         </article>
         
         <Image 
-         src={Emi} 
+         src={EmiInicio}
           height={2000} 
           width={2000} 
           alt="Imaen-emi" 
