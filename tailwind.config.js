@@ -66,6 +66,30 @@ module.exports = {
           '100%':{
             boxShadow: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
           }
+        },
+        'alerta': {
+          '0%':{
+            opacity: '0',
+            scale: '0.2'
+          },
+          '10%': {
+            opacity: '1',
+            scale: '1.2'
+          },
+          '20%':{
+            scale: '1'
+          },
+          '80%':{
+            scale: '1'
+          },
+          '90%':{
+            scale: '1.2',
+            opacity: '1',
+          },
+          '100%':{
+            opacity: '0',
+            scale: '0'
+          }
         }
 
       },
@@ -74,7 +98,8 @@ module.exports = {
         'slide': 'slide 2s',
         'delay-entrada': 'delay-entrada 2s',
         'floating': 'floating 5s ease-in-out infinite',
-        'respiro': 'respiro 5s ease-in-out infinite'
+        'respiro': 'respiro 5s ease-in-out infinite',
+        'alerta': 'alerta 5s '
       },
             
     },

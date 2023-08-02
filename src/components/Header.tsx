@@ -28,7 +28,7 @@ export default function Header() {
           Sobre mi
         </Link>
 
-        <Link href={'/'}
+        <Link href={'/contacto'}
           onClick={() => setMenu(false)}
           className="text-white font-bold text-2xl hover:text-sky-500 transition-colors"
         >
@@ -61,7 +61,7 @@ export default function Header() {
             Sobre mi
           </Link>
 
-          <Link href={'/'}
+          <Link href={'/contacto'}
             className="text-white font-bold text-lg hover:text-sky-800 transition-colors"
           >
             Contacto

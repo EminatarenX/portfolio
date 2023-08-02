@@ -1,0 +1,25 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model resenia {
+  id          Int       @id @default(autoincrement())
+  fecha       DateTime @default(now())
+  nombre      String
+  comentario  String
+  calificacion Int
+}
+
+
+model visitas {
+  id          Int       @id @default(autoincrement())
+  fecha       DateTime @default(now())
+}
