@@ -1,18 +1,24 @@
+"use client"
 import Image from "next/image"
 import EmiInicio from '@/img/emi-developer.jpg'
 import github from '@/img/git.png'
 import instagram from '@/img/instagram.png'
+import useApp from "@/hooks/useApp"
+
+
 export default function Home() {
+  const { darkMode } = useApp()
+
   return (
-    <main className="pt-10 lg:p-40 fixed flex h-screen w-full flex-col bg-gradient-to-tr  from-sky-100 to-sky-500">
+    <main className={`pt-10 lg:p-40 fixed flex h-screen w-full flex-col ${darkMode ? 'bg-slate-800': 'bg-gradient-to-tr  from-sky-100 to-sky-500'}`}>
       <section className="flex flex-col xl:flex-row justify-around items-center animate-entrada gap-10">
         <article className="flex flex-col">
           
 
-            <h1 className="text-6xl font-bold text-center">
-              Hola, soy <span className="text-blue-500">Eminataren</span>
+            <h1 className={`text-6xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'}`}>
+              Hola, soy <span className={`${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Eminataren</span>
             </h1>
-            <h2 className="text-4xl font-bold text-center">
+            <h2 className={`text-4xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'}`}>
               Full Stack Developer 
             </h2>
 
@@ -23,7 +29,7 @@ export default function Home() {
                 alt="github"
                 height={50}
                 width={50}
-
+                className={darkMode ? 'invert' : ''}
               />
               </a>
               <a href="https://www.instagram.com/eminataren/" target="_blank">
@@ -44,7 +50,7 @@ export default function Home() {
           height={2000} 
           width={2000} 
           alt="Imaen-emi" 
-          className="rounded-full object-cover xl:w-[450px]"  
+          className="rounded-full object-cover xl:w-[450px] animate-respiro"  
         />
       </section>
 

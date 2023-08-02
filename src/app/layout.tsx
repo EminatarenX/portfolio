@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
-
+import AppProvider from '@/context/AppProvider'
 
 export const metadata: Metadata = {
   title: 'Eminataren',
@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
+        <AppProvider>
+          <Header />
+          {children}
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   )
