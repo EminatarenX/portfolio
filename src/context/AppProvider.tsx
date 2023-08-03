@@ -17,15 +17,14 @@ const  AppProvider = ({ children }: AppProviderProps) => {
   const [visitas, setVisitas] = useState('')
 
 
-
-
   useEffect(()=> {
     const getVisitas = async () => {
       try {
         const { data } = await axios.get('/api/visitas')
-        setVisitas(data)
+        let visitas = String(data)
+        setVisitas(visitas)
       } catch (error) {
-        console.log(error)
+        throw error
       }
     }
     const postVisitas = async () => {
@@ -33,7 +32,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
        await axios.post('/api/visitas', {})
         
       } catch (error) {
-        console.log(error)
+        throw error
       }
     }
     getVisitas()
