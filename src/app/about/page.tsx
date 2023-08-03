@@ -133,7 +133,7 @@ export default function page() {
                 <span
                   className="text-slate-500 text-sm font-semibold"
                 >
-                  Este sitio web fue hecho con Nextjs y Tailwindcss.
+                  Este sitio web fue hecho con Nextjs y Tailwindcss y Typescript.
                 </span>
                 
               </p>
