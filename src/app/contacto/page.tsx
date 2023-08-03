@@ -58,7 +58,7 @@ export default function page() {
 
         <section className="flex flex-col lg:flex-row justify-around items-center  animate-entrada gap-10">
           <h1 className={`text-5xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'} lg:w-[600px]`}>
-            Puedes enviar un correo con tu nombre en el siguiente <span className={`${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Formulario</span>
+            Puedes enviar un correo con tu nombre en el siguiente <span className={`${darkMode ? 'text-sky-500' : 'text-sky-600'}`}>Formulario</span>
           </h1>
         
           <FormularioContacto
@@ -79,7 +79,7 @@ export default function page() {
             O puedes dejar una reseña sobre mi aqui ={'>'}
 
           </h1>
-          <span className={`text-5xl font-bold ${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Reseña</span>
+          <span className={`text-5xl font-bold ${darkMode ? 'text-sky-500' : 'text-sky-600'}`}>Reseña</span>
           <FormularioResenia
             handleResenia={handleResenia}
             mensajeResenia={mensajeResenia}
