@@ -96,7 +96,7 @@ export default function page() {
         >
           <h1 className={`text-5xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'} lg:w-[600px]`}>
 
-            O puedes dejar una reseña sobre mi aqui ={'>'}
+            O puedes dejar una reseña sobre mi aquí ={'>'}
 
           </h1>
           <span className={`text-5xl font-bold ${darkMode ? 'text-sky-500' : 'text-sky-600'}`}>Reseña</span>

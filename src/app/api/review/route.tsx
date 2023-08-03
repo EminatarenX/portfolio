@@ -10,10 +10,13 @@ export async function GET (req: Request) {
 
     return NextResponse.json(reviews)
 
+
   } catch (error) {
 
     const e = new Error('Error al obtener las reseñas')
     return NextResponse.json({ error: e.message })
+  }finally{
+    await prisma.$disconnect()
   }
 }
 
@@ -35,6 +38,8 @@ export async function POST (req: Request, res: Response){
 
     const e = new Error('Error al crear la reseña')
     return NextResponse.json({ error: e.message })
+  }finally{
+    await prisma.$disconnect()
   }
 
 }

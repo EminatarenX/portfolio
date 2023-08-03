@@ -24,7 +24,7 @@ export default function page() {
           </p>
 
           <p className={`text-left lg:text-center font-semibold ${darkMode ? 'text-slate-300': 'text-slate-800'} text-xl `}>
-            Por otra parte tambien me gusta el deporte, en especial running,
+            Por otra parte también me gusta el deporte, en especial running,
             me gusta mucho la naturaleza y los animales; pasar el tiempo con mi familia y amigos. 
           </p>
           <h4 className={`font-bold text-2xl ${darkMode ? 'text-white': 'text-sky-950'} text-left lg:text-center`}>
@@ -32,7 +32,7 @@ export default function page() {
           <p className={`text-left lg:text-center font-semibold ${darkMode ? 'text-slate-300': 'text-slate-800'} text-xl `}>
             Estudie la preparatoria ( high school ) en Taylorsville High School en Utah, Estados Unidos,
             lo que me ha ayudado mucho a comunicarme en ingles tanto en la escuela como en el trabajo y amigos.
-            Actualmente estudio la carrera de Ingenieria en Software en la Universidad Politecnica de Chiapas.
+            Actualmente estudio la carrera de Ingeniería en Software en la Universidad Politécnica de Chiapas.
           </p>
 
         </article>
@@ -75,14 +75,14 @@ export default function page() {
 
           <p className={`font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>
             El administrador de la pagina puede agregar, editar y eliminar las publicaciones
-            de los cuartos disponibles, asi como tambien puede agregar, editar y eliminar las
+            de los cuartos disponibles, asi como también puede agregar, editar y eliminar las
             habitaciones disponibles y consultar sus finanzas.
           </p>
 
 
     
           <p className={`${darkMode ? "text-slate-500": "text-slate-700"}`}>
-            <span className={`font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Tecnologias usadas: </span>
+            <span className={`font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Tecnologías usadas: </span>
             React vite, Tailwindcss, Context-api from React, React Router Dom, Nodejs, Express, Microsoft SQL server from AWS y AWS Amplify, Stripe, Nodecron, Bycript, Nodemailer, 
             Json Web Token, Cloudinary.
 
@@ -114,7 +114,7 @@ export default function page() {
 
           </p>
           <p className={`${darkMode ? "text-slate-500": "text-slate-700"}`}>
-            <span className={`font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Tecnologias usadas: </span>
+            <span className={`font-semibold ${darkMode ? 'text-slate-300' : 'text-slate-700'}`}>Tecnologías usadas: </span>
             React vite, Tailwindcss, Context-api from React, React Router Dom, Netlify.
           </p>
           </article>
@@ -133,7 +133,7 @@ export default function page() {
                 <span
                   className="text-slate-500 text-sm font-semibold"
                 >
-                  Este sitio web fue hecho con Nextjs, Tailwindcss y Typescript.
+                  Este sitio web fue hecho con Nextjs v13, Tailwindcss y Typescript, Prisma y MySQL.
                 </span>
                 
               </p>

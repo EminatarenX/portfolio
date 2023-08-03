@@ -15,6 +15,7 @@ const AppContext = createContext({
   reviews: [] as Review[],
   postReview: (review: Review) => {},
   alertaSuccess: false,
+  getReviews: () => {}
   
 })
 
@@ -43,6 +44,15 @@ const  AppProvider = ({ children }: AppProviderProps) => {
     }
   }
 
+  const getReviews = async () => {
+    try {
+      const { data } = await axios.get('/api/review')
+      setReviews(data)
+    } catch (error) {
+      throw error
+    }
+  }
+
   useEffect(()=> {
     const getReviews = async () => {
       try {
@@ -62,6 +72,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
       reviews,
       postReview,
       alertaSuccess,
+      getReviews
       
      }}>
 
