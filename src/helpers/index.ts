@@ -1,9 +1,6 @@
-interface Fecha {
-  fecha: string
-}
 
-export function formatearFecha(fecha: Fecha){
-  const date = new Date(fecha.fecha)
+export function formatearFecha(fecha: Date): string {
+  const date = new Date(fecha)
   
   const fechaFormateada = date.toLocaleDateString('es-ES', {
     year: 'numeric',

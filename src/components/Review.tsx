@@ -8,7 +8,6 @@ export default function Review(review: Review) {
   const { darkMode } = useApp()
   const { nombre, comentario, calificacion, fecha } = review
 
-  const fechaObject = { fecha: '2023-03-17' };
 
   return (
     <div
@@ -149,7 +148,7 @@ export default function Review(review: Review) {
       {/* <p>{calificacion}</p> */}
       <div>
 
-        <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-sky-600'}`}>{formatearFecha(fechaObject)}</p>
+        <p className={`text-xs ${darkMode ? 'text-gray-500' : 'text-sky-600'}`}>{fecha !== undefined ? formatearFecha(fecha) : "Fecha no disponible"}</p>
       </div>
 
     </div>
