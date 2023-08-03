@@ -11,7 +11,7 @@ export default function Header() {
       <aside className={`lg:hidden z-10 text-right flex flex-col 
     h-screen w-[300px] fixed right-0 top-0 p-14 justify-around
     ${darkMode ? 'bg-gray-900 ' : 'bg-gradient-to-br from-sky-800 to-sky-700'}
-      transition-all
+      transition-all duration-700
       ${menu ? 'translate-x-0' : 'translate-x-full'}
     `}>
         <Link href={'/'}
