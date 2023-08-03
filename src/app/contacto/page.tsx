@@ -4,6 +4,7 @@ import { FormEvent } from "react"
 import { useState, useEffect } from "react"
 import FormularioContacto from "@/components/FormularioContacto"
 import Alerta from "@/components/Alerta"
+import FormularioResenia from "@/components/FormularioResenia"
 
 export default function page() {
   const { darkMode } = useApp()
@@ -13,6 +14,13 @@ export default function page() {
   const [numero, setNumero] = useState('')
   const [mensaje, setMensaje] = useState('')
   const [alerta, setAlerta] = useState(false)
+
+  const [mensajeResenia, setMensajeResenia] = useState('')
+  const [resenia, setResenia] = useState('Lo recomiendo, es muy bueno!')
+  const [estrellas, setEstrellas] = useState(1)
+  const [nombreResenia, setNombreResenia] = useState('')
+  
+
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) : void => {
     e.preventDefault()
@@ -25,6 +33,13 @@ export default function page() {
       numero
     }
 
+  }
+
+  const handleResenia = (e: FormEvent<HTMLFormElement>) : void => {
+    e.preventDefault()
+    if([resenia, nombreResenia].includes('')) return setMensajeResenia('Por favor rellena todos los campos')
+    if(estrellas === 1) return setMensajeResenia('Por favor selecciona una cantidad de estrellas mas alta :,(')
+    setMensajeResenia('')
   }
 
   useEffect(() => {
@@ -55,6 +70,27 @@ export default function page() {
             mensaje={mensaje}
           />
         </section>
+
+        <section
+          className="flex flex-col  justify-around items-center  animate-entrada gap-10 mt-32"
+        >
+          <h1 className={`text-5xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'} lg:w-[600px]`}>
+
+            O puedes dejar una reseña sobre mi aqui ={'>'}
+
+          </h1>
+          <span className={`text-5xl font-bold ${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Reseña</span>
+          <FormularioResenia
+            handleResenia={handleResenia}
+            mensajeResenia={mensajeResenia}
+            setResenia={setResenia}
+            setNombreResenia={setNombreResenia}
+            resenia={resenia}
+            nombreResenia={nombreResenia}
+          />
+        </section>  
+
+
       </main>
     </>
   )

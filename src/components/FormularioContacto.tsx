@@ -31,33 +31,33 @@ export default function FormularioContacto({
           )
         }
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
-      <label htmlFor="nombre" className={`text-xs ${darkMode ? 'text-white' : 'text-ssky-950'}`}>Nombre completo</label>
+      <label htmlFor="nombre" className={`text-xs ${darkMode ? 'text-white' : 'text-sky-950'}`}>Nombre completo</label>
 
       <input 
         id="nombre" 
         type="text"
          placeholder="Emiliano Natare Del Rivero" 
-         className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 lg:w-[350px]`} 
+         className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 w-[350px]`} 
           onChange={(e) => setNombre(e.target.value)}
          />
     </div>
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
-      <label htmlFor="correo" className={`text-xs ${darkMode ? 'text-white' : 'text-ssky-950'}`}>Correo electronico</label>
+      <label htmlFor="correo" className={`text-xs ${darkMode ? 'text-white' : 'text-sky-950'}`}>Correo electronico</label>
       <input 
       id="correo" 
       type="email" 
       placeholder="usuario@correo.com" 
-      className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 lg:w-[350px]`} 
+      className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700  w-[350px]`} 
       onChange={(e) => setCorreo(e.target.value)}
       />
     </div>
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
-      <label htmlFor="numero" className={`text-xs ${darkMode ? 'text-white' : 'text-ssky-950'}`}>Numero Telefonico</label>
+      <label htmlFor="numero" className={`text-xs ${darkMode ? 'text-white' : 'text-sky-950'}`}>Numero Telefonico</label>
       <input 
       id="numero" 
       type="text" 
       placeholder="opcional" 
-      className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 lg:w-[350px]`} 
+      className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 w-[350px]`} 
       onChange={(e) => setNumero(e.target.value)}
       />
     </div>
