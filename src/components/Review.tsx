@@ -14,7 +14,7 @@ export default function Review(review: Review) {
     <div
       className={`flex flex-col gap-10 justify-between min-w-[350px] xl:min-w-[500px]  
       ${darkMode ? 'bg-gradient-to-t from-gray-900 to-gray-950' :
-          'bg-gradient-to-t from-sky-200 to-sky-400'} rounded shadow-xl p-10 
+          'bg-gradient-to-t from-sky-200 to-sky-400'} rounded shadow-xl p-10 animate-delay-entrada
     
     `}>
       <div className="flex flex-col gap-2">
