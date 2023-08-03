@@ -27,7 +27,7 @@ export default function FormularioContacto({
   >
      {
           mensaje.includes('Por favor') && (
-            <p className="text-red-500 text-center font-semibold">{mensaje}</p>
+            <p className="text-red-500 text-center font-semibold animate-slide">{mensaje}</p>
           )
         }
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>

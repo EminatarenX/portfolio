@@ -1,49 +1,68 @@
 "use client"
 import { createContext, useState, useEffect } from "react";
-
 import axios from "axios";
+import { Review } from "@/app/types/types";
 
-const AppContext = createContext({
-  darkMode: true,
-  setDarkMode: (value: boolean) => {}
-})
 
 interface AppProviderProps {
   children: React.ReactNode
 }
 
+
+const AppContext = createContext({
+  darkMode: true,
+  setDarkMode: (value: boolean) => {},
+  reviews: [] as Review[],
+  postReview: (review: Review) => {},
+  alertaSuccess: false,
+  
+})
+
+type AlertType = {
+  titulo: string,
+  mensaje: string,
+  error: boolean
+}
+
 const  AppProvider = ({ children }: AppProviderProps) => {
   const [darkMode, setDarkMode] = useState(true)
-  const [visitas, setVisitas] = useState('')
+  const [reviews, setReviews] = useState<Review[]>([])
+  const [alertaSuccess, setAlertaSuccess] = useState(false)
 
+
+  const postReview = async (review: Review) => {
+    try {
+      const { data } = await axios.post('/api/review', review)
+      setReviews([...reviews, data])
+      setAlertaSuccess(true)
+      setTimeout(() => {
+        setAlertaSuccess(false)
+      }, 5000);
+    } catch (error) {
+      throw error
+    }
+  }
 
   useEffect(()=> {
-    const getVisitas = async () => {
+    const getReviews = async () => {
       try {
-        const { data } = await axios.get('/api/visitas')
-        let visitas = String(data)
-        setVisitas(visitas)
+        const { data } = await axios.get('/api/review')
+        setReviews(data)
       } catch (error) {
         throw error
       }
     }
-    const postVisitas = async () => {
-      try {
-       await axios.post('/api/visitas', {})
-        
-      } catch (error) {
-        throw error
-      }
-    }
-    getVisitas()
-    postVisitas()
   },[])
 
   return (
     <AppContext.Provider 
     value={{ 
       darkMode,
-      setDarkMode
+      setDarkMode,
+      reviews,
+      postReview,
+      alertaSuccess,
+      
      }}>
 
       {children}
