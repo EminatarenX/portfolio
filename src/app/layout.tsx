@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 import AppProvider from '@/context/AppProvider'
+import AuthProvider from '@/context/AuthProvider'
 
 export const metadata: Metadata = {
   title: 'Eminataren',
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppProvider>
-          <Header />
-          {children}
-          <Footer />
-        </AppProvider>
+          <AuthProvider>
+              <AppProvider>
+                  <Header />
+                      {children}
+                  <Footer />
+              </AppProvider>
+          </AuthProvider>
       </body>
     </html>
   )

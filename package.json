@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@prisma/client": "^5.1.0",
+    "@types/bcrypt": "^5.0.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
     "next": "13.4.12",
+    "node-cron": "^3.0.2",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -23,6 +26,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/node-cron": "^3.0.8",
     "debug": "^4.3.4",
     "prisma": "^5.1.0",
     "supports-color": "^9.4.0"

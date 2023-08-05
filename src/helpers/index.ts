@@ -10,3 +10,5 @@ export function formatearFecha(fecha: Date): string {
 
   return fechaFormateada
 }
+
+

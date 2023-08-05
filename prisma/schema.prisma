@@ -18,8 +18,18 @@ model resenia {
   calificacion Int
 }
 
+model usuario {
+  id String @id @default(uuid())
+  nombre   String
+  password String
+  
+}
 
-model visitas {
+model mensaje {
   id          Int       @id @default(autoincrement())
   fecha       DateTime @default(now())
+  nombre      String
+  correo  String
+  mensaje String
+  telefono Int
 }

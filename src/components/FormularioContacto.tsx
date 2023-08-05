@@ -62,6 +62,20 @@ export default function FormularioContacto({
       />
     </div>
 
+    <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
+      <label htmlFor="mensaje"
+        className={`text-xs ${darkMode ? 'text-white' : 'text-sky-950'}`}>Escribe un mensaje</label>
+      <textarea className="rounded text-sky-900"
+        name="mensaje"
+        id="mensaje"
+        cols={30}
+        
+      >
+
+      </textarea>
+    
+    </div>
+
 
 
     <input type="submit" value="Enviar"
