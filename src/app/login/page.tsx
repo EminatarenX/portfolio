@@ -4,7 +4,7 @@ import { useState } from 'react'
 import useAuth from '@/hooks/useAuth'
 
 export default function page() {
-    const { login } = useAuth()
+    const { login, mensaje } = useAuth()
 
     const [usuario, setUsuario] = useState<string>('')
     const [password, setPassword] = useState<string>('')
@@ -30,6 +30,7 @@ export default function page() {
             <label htmlFor="usuario"
                 className="text-3xl font-bold"
             >Login</label>
+            {mensaje.length > 0 && <p className="text-red-500">{mensaje}</p>}
             <div className="flex flex-col">
                 <label htmlFor="usuario"
                     className="text-sm"

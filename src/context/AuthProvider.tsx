@@ -4,7 +4,8 @@ import { useEffect, createContext, useState } from 'react'
 import axios from 'axios'
 
 const AuthContext = createContext({
-    login: (data: any) => {}
+    login: (data: any) => {},
+    mensaje: '',
 })
 
 type AuthProviderProps = {
@@ -56,7 +57,8 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
         value={{
 
-            login
+            login,
+            mensaje,
         }}>
 
             {children}
