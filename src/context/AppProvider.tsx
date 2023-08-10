@@ -89,7 +89,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
       const { data } = await axios.post(serverURL, obtenerReviews)
       
       let reviewsObtenidas = data.data.obtenerReviews
-      console.log(reviewsObtenidas)
+     
       setReviews(reviewsObtenidas)
     } catch (error) {
       throw error

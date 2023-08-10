@@ -12,7 +12,7 @@ export default function page() {
     const handleAdmin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if([usuario, password].includes('')) return
-
+        
         const data = {
             usuario,
             password

@@ -13,6 +13,6 @@ export function formatearFecha(fecha: Date): string {
   return fechaFormateada
 }
 
-export const serverURL = process.env.SERVER || 'http://localhost:3000'
+export const serverURL = process.env.SERVER || 'http://localhost:5439/'
 
 

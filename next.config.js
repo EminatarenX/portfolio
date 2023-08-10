@@ -2,7 +2,7 @@
 
 const nextConfig = {
   env: {
-    SERVER: 'https://portfolio-backend-graphql-production.up.railway.app/'
+    SERVE: 'https://portfolio-backend-graphql-production.up.railway.app/'
   }
 }
 
