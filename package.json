@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.0",
     "@prisma/client": "^5.1.0",
     "@types/bcrypt": "^5.0.0",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
+    "apollo-link-context": "^1.0.20",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
+    "graphql": "^16.7.1",
     "next": "13.4.12",
     "node-cron": "^3.0.2",
     "postcss": "8.4.27",

@@ -77,7 +77,7 @@ export default function Home( ){
          
          reviews.map((review) => (
             <Review 
-            key={review.id} 
+              key={review.id} 
             {...review} />
           ))
           }

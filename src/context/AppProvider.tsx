@@ -32,37 +32,68 @@ const  AppProvider = ({ children }: AppProviderProps) => {
 
 
   const postReview = async (review: Review) => {
+
+    const { nombre, comentario, calificacion } = review
+
+    const nuevaReview = {
+      query: `
+        mutation crearReview($input: ReviewInput!) {
+          crearReview(input: $input) {
+            nombre
+            comentario
+            calificacion
+          }
+        }
+      `,
+      variables: {
+        input: {
+          nombre,
+          comentario,
+          calificacion
+        }
+      }
+    };
+
     try {
-      const { data } = await axios.post('/api/review', review)
-      setReviews([...reviews, data])
-      setAlertaSuccess(true)
-      setTimeout(() => {
-        setAlertaSuccess(false)
-      }, 5000);
+        const { data } = await axios.post('https://portfolio-backend-graphql-production.up.railway.app/', nuevaReview)
+       
+
+        setReviews([...reviews, data])
+        setAlertaSuccess(true)
+        setTimeout(() => {
+          setAlertaSuccess(false)
+        }, 5000);
     } catch (error) {
       throw error
     }
   }
 
   const getReviews = async () => {
+    const obtenerReviews = {
+      query: `
+      query obtenerReviews{
+        obtenerReviews{
+          id
+          fecha
+          nombre
+          comentario
+          calificacion
+        }
+      }
+    `
+    }
+
     try {
-      const { data } = await axios.get('/api/review')
-      setReviews(data)
+      const { data } = await axios.post('https://portfolio-backend-graphql-production.up.railway.app/', obtenerReviews)
+      
+      let reviewsObtenidas = data.data.obtenerReviews
+      setReviews(reviewsObtenidas)
     } catch (error) {
       throw error
     }
   }
 
-  useEffect(()=> {
-    const getReviews = async () => {
-      try {
-        const { data } = await axios.get('/api/review')
-        setReviews(data)
-      } catch (error) {
-        throw error
-      }
-    }
-  },[])
+
 
   return (
     <AppContext.Provider 
