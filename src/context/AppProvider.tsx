@@ -39,6 +39,8 @@ const  AppProvider = ({ children }: AppProviderProps) => {
       query: `
         mutation crearReview($input: ReviewInput!) {
           crearReview(input: $input) {
+            id
+            fecha
             nombre
             comentario
             calificacion
@@ -56,9 +58,9 @@ const  AppProvider = ({ children }: AppProviderProps) => {
 
     try {
         const { data } = await axios.post('https://portfolio-backend-graphql-production.up.railway.app/', nuevaReview)
-       
-
-        setReviews([...reviews, data])
+    
+        let reviewObtenida = data.data.crearReview
+        setReviews([...reviews, reviewObtenida])
         setAlertaSuccess(true)
         setTimeout(() => {
           setAlertaSuccess(false)
