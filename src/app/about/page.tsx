@@ -133,7 +133,7 @@ export default function page() {
                 <span
                   className="text-slate-500 text-sm font-semibold"
                 >
-                  Este sitio web fue hecho con Nextjs v13, Tailwindcss y Typescript, Prisma y MySQL.
+                  Este sitio web fue hecho con Nextjs v13, Tailwindcss, Typescript, Prisma, MySQL, Apollo Server y GraphQL.
                 </span>
                 
               </p>

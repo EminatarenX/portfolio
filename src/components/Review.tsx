@@ -7,7 +7,7 @@ import useApp from "@/hooks/useApp";
 export default function Review(review: Review) {
   const { darkMode } = useApp()
   const { nombre, comentario, calificacion, fecha } = review
-
+  
 
   return (
     <div
