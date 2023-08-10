@@ -9,7 +9,7 @@ import Review from "@/components/Review"
 
 export default function Home( ){
   const { darkMode, getReviews, reviews } = useApp()
-
+  
   useEffect(()=> {
     getReviews()
     

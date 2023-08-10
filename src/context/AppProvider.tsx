@@ -2,7 +2,7 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import { Review } from "@/app/types/types";
-
+import { serverURL } from "@/helpers";
 
 interface AppProviderProps {
   children: React.ReactNode
@@ -57,7 +57,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
     };
 
     try {
-        const { data } = await axios.post('https://portfolio-backend-graphql-production.up.railway.app/', nuevaReview)
+        const { data } = await axios.post(serverURL, nuevaReview)
     
         let reviewObtenida = data.data.crearReview
         setReviews([...reviews, reviewObtenida])
@@ -86,7 +86,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
     }
 
     try {
-      const { data } = await axios.post('https://portfolio-backend-graphql-production.up.railway.app/', obtenerReviews)
+      const { data } = await axios.post(serverURL, obtenerReviews)
       
       let reviewsObtenidas = data.data.obtenerReviews
       setReviews(reviewsObtenidas)
