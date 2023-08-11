@@ -4,7 +4,7 @@ import { useEffect, createContext, useState } from 'react'
 import axios from 'axios'
 import { serverURL } from '@/helpers'
 import { useRouter } from 'next/navigation'
-
+import { Auth } from '@/app/types/types'
 const AuthContext = createContext({
     login: (data: any) => {},
     mensaje: '',
@@ -21,10 +21,7 @@ type AuthData = {
     password: string
 }
 
-interface Auth {
-  id: string
-  nombre: string
-}
+
 interface ErrorResponse {
   response: {
     data: {
@@ -112,6 +109,14 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         }
   
         const { data } = await axios.post(serverURL, obtenerUsuario, config)
+
+        if(data.errors){
+          router.push('/')
+          setAuth({} as Auth)
+          
+          return
+        }
+        
         const usuarioObtenido = data.data.obtenerUsuario
         setAuth(usuarioObtenido)
         router.push('/admin')

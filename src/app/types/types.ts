@@ -5,3 +5,8 @@ export interface Review {
   calificacion: number
   fecha?: string
 }
+
+export interface Auth {
+  id: string
+  nombre: string
+}

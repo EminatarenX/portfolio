@@ -2,7 +2,13 @@
 import Link from "next/link"
 import { useState } from "react"
 import useApp from "@/hooks/useApp"
+import useAuth from "@/hooks/useAuth"
+import {useRouter} from "next/navigation"
+import { Auth } from "@/app/types/types"
+
 export default function Header() {
+  const { auth, setAuth } = useAuth()
+  const router = useRouter()
   const [menu, setMenu] = useState(false)
   const { darkMode, setDarkMode } = useApp()
 
@@ -34,6 +40,22 @@ export default function Header() {
         >
           Contacto
         </Link>
+
+        {
+          auth.nombre ? (
+            <button type={'button'}
+            onClick={() => {
+              localStorage.removeItem('token')
+              setAuth({} as Auth)
+              setMenu(false)
+              router.push('/')
+            }}
+            className="text-white font-bold text-2xl hover:text-sky-500 transition-colors text-right"
+          >
+            Cerrar Sesion
+          </button>
+          ) : ''
+        }
       </aside>
       <header className={` sticky top-0 flex p-5 justify-between ${darkMode ? 'bg-gray-800 ' : 'bg-gradient-to-br from-sky-100 to-sky-500'} `}>
         <Link href={'/'} className="text-2xl text-white font-bold">EminatarenX</Link>
