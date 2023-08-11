@@ -6,7 +6,12 @@ interface Props {
   setNombre: (value: string) => void;
   setCorreo: (value: string) => void;
   setNumero: (value: string) => void;
+  setMensajeContacto: (value: string) => void;
   mensaje: string;
+  nombre: string;
+  correo: string;
+  numero: string;
+  mensajeContacto: string;
 }
 
 export default function FormularioContacto({
@@ -14,8 +19,13 @@ export default function FormularioContacto({
   darkMode, 
   setNombre, 
   setCorreo, 
-  setNumero
-  , mensaje
+  setNumero,
+  setMensajeContacto,
+  mensaje,
+  nombre,
+  correo,
+  numero,
+  mensajeContacto
   } : Props) {
 
 
@@ -39,6 +49,7 @@ export default function FormularioContacto({
          placeholder="Emiliano Natare Del Rivero" 
          className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 w-[350px]`} 
           onChange={(e) => setNombre(e.target.value)}
+          value={nombre}
          />
     </div>
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
@@ -49,6 +60,7 @@ export default function FormularioContacto({
       placeholder="usuario@correo.com" 
       className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700  w-[350px]`} 
       onChange={(e) => setCorreo(e.target.value)}
+      value={correo}
       />
     </div>
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
@@ -59,17 +71,19 @@ export default function FormularioContacto({
       placeholder="opcional" 
       className={`p-3 rounded focus:outline-sky-500 font-semibold text-slate-700 w-[350px]`} 
       onChange={(e) => setNumero(e.target.value)}
+      value={numero}
       />
     </div>
 
     <div className={`flex flex-col ${darkMode ? 'text-white' : 'text-sky-950'}`}>
       <label htmlFor="mensaje"
         className={`text-xs ${darkMode ? 'text-white' : 'text-sky-950'}`}>Escribe un mensaje</label>
-      <textarea className="rounded text-sky-900"
+      <textarea className="rounded text-sky-900 p-2 text-sm font-bold"
         name="mensaje"
         id="mensaje"
         cols={30}
-        
+        onChange={ e => setMensajeContacto(e.target.value)}
+        value={mensajeContacto}
       >
 
       </textarea>

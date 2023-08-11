@@ -8,13 +8,16 @@ import FormularioResenia from "@/components/FormularioResenia"
 import AlertaSuccess from "@/components/AlertaSuccess"
 
 export default function page() {
-  const { darkMode, postReview, alertaSuccess } = useApp()
+  const { darkMode, postReview, alertaSuccess, enviarMensaje } = useApp()
 
   const [nombre, setNombre] = useState('')
   const [correo, setCorreo] = useState('')
   const [numero, setNumero] = useState('')
+  const [mensajeContacto, setMensajeContacto] = useState('')
+
   const [mensaje, setMensaje] = useState('')
   const [alerta, setAlerta] = useState(false)
+  const [alertaSuccessContacto, setAlertaSuccessContacto] = useState(false)
 
   const [mensajeResenia, setMensajeResenia] = useState('')
   const [resenia, setResenia] = useState('Lo recomiendo, es muy bueno!')
@@ -25,14 +28,29 @@ export default function page() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    if ([nombre, correo].includes('')) return setMensaje('Por favor rellena todos los campos')
+    if ([nombre, correo, mensajeContacto, numero].includes('')) return setMensaje('Por favor rellena todos los campos')
+    if(numero.length < 10 || numero.length > 10) return setMensaje('Por favor ingresa un numero valido')
+
     setMensaje('')
 
     const data = {
       nombre,
       correo,
-      numero
+      telefono: numero,
+      mensaje: mensajeContacto
     }
+
+    enviarMensaje(data)
+    setNombre('')
+    setCorreo('')
+    setNumero('')
+    setMensaje('')
+    setMensajeContacto('')
+    setAlertaSuccessContacto(true)
+
+    setTimeout(() => {
+      setAlertaSuccessContacto(false)
+    }, 5000);
 
 
 
@@ -67,6 +85,8 @@ export default function page() {
 
   return (
     <>
+      {alertaSuccessContacto && <AlertaSuccess titulo={'Mensaje enviado!'} mensaje={'Gracias por tu mensaje, te responderé lo mas pronto posible'} />}
+
       {alerta && <Alerta />}
 
       {
@@ -87,7 +107,12 @@ export default function page() {
             setNombre={setNombre}
             setCorreo={setCorreo}
             setNumero={setNumero}
+            setMensajeContacto={setMensajeContacto}
             mensaje={mensaje}
+            nombre={nombre}
+            correo={correo}
+            numero={numero}
+            mensajeContacto={mensajeContacto}
           />
         </section>
 

@@ -8,6 +8,15 @@ interface AppProviderProps {
   children: React.ReactNode
 }
 
+type MensajeI = {
+  id?: string,
+  nombre: string,
+  correo: string,
+  telefono: string,
+  mensaje: string,
+  fecha?: string
+}
+
 
 const AppContext = createContext({
   darkMode: true,
@@ -15,7 +24,8 @@ const AppContext = createContext({
   reviews: [] as Review[],
   postReview: (review: Review) => {},
   alertaSuccess: false,
-  getReviews: () => {}
+  getReviews: () => {},
+  enviarMensaje: (mensaje: MensajeI) => {}
   
 })
 
@@ -29,7 +39,7 @@ const  AppProvider = ({ children }: AppProviderProps) => {
   const [darkMode, setDarkMode] = useState(true)
   const [reviews, setReviews] = useState<Review[]>([])
   const [alertaSuccess, setAlertaSuccess] = useState(false)
-
+  const [mensajesContacto, setMensajesContacto] = useState<MensajeI[]>([])
 
   const postReview = async (review: Review) => {
 
@@ -96,6 +106,43 @@ const  AppProvider = ({ children }: AppProviderProps) => {
     }
   }
 
+  const enviarMensaje = async (datos: MensajeI) => {
+    const { nombre, correo, telefono, mensaje } = datos
+
+    const crearMensaje = {
+      query: `
+        mutation crearMensaje($input: MensajeInput!){
+          crearMensaje(input: $input){
+            id
+            nombre
+            correo
+            telefono
+            mensaje
+            fecha
+          }
+        }
+      `,
+      variables: {
+        input: {
+          nombre,
+          correo,
+          telefono,
+          mensaje
+        }
+      }
+    }
+
+    try {
+
+      const { data } = await axios.post(serverURL, crearMensaje)
+      const nuevoMensaje = data.data.crearMensaje
+      setMensajesContacto([...mensajesContacto, nuevoMensaje])
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
 
   return (
@@ -106,7 +153,8 @@ const  AppProvider = ({ children }: AppProviderProps) => {
       reviews,
       postReview,
       alertaSuccess,
-      getReviews
+      getReviews,
+      enviarMensaje
       
      }}>
 
