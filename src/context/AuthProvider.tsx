@@ -72,7 +72,9 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
             localStorage.setItem('token', token)
 
             setMensaje('')
-            router.push('/admin')
+            setTimeout(() => {
+             window.location.reload()
+            }, 1500);
 
         } catch (error) {
        
@@ -99,23 +101,20 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
   
         const obtenerUsuario = {
           query: `
-            query obtenerUsuario($token: String!){
-              obtenerUsuario(token: $token){
+            query obtenerUsuario{
+              obtenerUsuario{
                 id
                 nombre
               }
             }
-          `,
-          variables: {
-            token
-          },
+          `
           
         }
   
         const { data } = await axios.post(serverURL, obtenerUsuario, config)
         const usuarioObtenido = data.data.obtenerUsuario
         setAuth(usuarioObtenido)
-        
+        router.push('/admin')
       }
       autenticar()
       

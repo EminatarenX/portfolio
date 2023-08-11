@@ -1,5 +1,5 @@
 
-export function formatearFecha(fecha: Date): string {
+export function formatearFecha(fecha: string) {
 
   
   const date = new Date(fecha)

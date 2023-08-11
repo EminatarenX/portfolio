@@ -25,7 +25,9 @@ const AppContext = createContext({
   postReview: (review: Review) => {},
   alertaSuccess: false,
   getReviews: () => {},
-  enviarMensaje: (mensaje: MensajeI) => {}
+  enviarMensaje: (mensaje: MensajeI) => {},
+  getMensajes: () => {},
+  mensajesContacto: [] as MensajeI[]
   
 })
 
@@ -143,6 +145,43 @@ const  AppProvider = ({ children }: AppProviderProps) => {
     }
   }
 
+  const getMensajes = async () => {
+    const token = localStorage.getItem('token')
+    if(!token) {
+      return
+    }
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+
+    const obtenerMensajes = {
+      query: `
+        query obtenerMensajes{
+          obtenerMensajes{
+            id
+            nombre
+            correo
+            telefono
+            mensaje
+            fecha
+          }
+        }
+      `
+    }
+
+    try {
+      const { data } = await axios.post(serverURL, obtenerMensajes, config)
+
+      const mensajesObtenidos = data.data.obtenerMensajes
+      setMensajesContacto(mensajesObtenidos)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
 
   return (
@@ -154,7 +193,9 @@ const  AppProvider = ({ children }: AppProviderProps) => {
       postReview,
       alertaSuccess,
       getReviews,
-      enviarMensaje
+      enviarMensaje,
+      getMensajes,
+      mensajesContacto
       
      }}>
 
