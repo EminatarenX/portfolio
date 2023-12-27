@@ -9,7 +9,7 @@
 .view{
     animation: entrada linear both;
     animation-timeline: view();
-    animation-range: entry 25% cover 30%;
+    animation-range: entry 30% cover 32%;
 }
 
 @keyframes entrada {
