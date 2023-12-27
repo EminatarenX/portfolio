@@ -1,22 +1,4 @@
 import Image from 'next/image'
-import html from '@/img/html.jpg'
-import react from '@/img/React.jpg'
-import css from '@/img/css.jpg'
-import js from '@/img/js.jpg'
-import tailwind from '@/img/tailwindcss.jpg'
-import next from '@/img/nextjs.jpg'
-import ts from '@/img/ts.jpg'
-import node from '@/img/nodejs.jpg'
-import jwt from '@/img/jwt.jpg'
-import mysql from '@/img/mysql.jpg'
-import postgres from '@/img/Postgresql.jpg'
-import mssql from '@/img/sql-server.jpg'
-import apollo from '@/img/apollo.png'
-import graphql from '@/img/graphql.png'
-import express from '@/img/expressjs.jpg'
-import prisma from '@/img/prisma.png'
-import mongodb from '@/img/mongodb.png'
-import aws from '@/img/aws.png'
 import useApp from '@/hooks/useApp'
 
 
@@ -26,126 +8,126 @@ export default function Imagenes() {
   return (
     <>
       <Image
-        src={html}
+        src={"/img/html.jpg"}
         alt="html"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={css}
+        src={"/img/css.jpg"}
         alt="css"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={js}
+        src={"/img/js.jpg"}
         alt="js"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
         <Image
-          src={ts}
+          src={"/img/ts.jpg"}
           alt="ts"
           width={150}
           height={150}
           className='hover:scale-105 transition-all'
         />
       <Image
-        src={react}
+        src={"/img/React.jpg"}
         alt="react"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={tailwind}
+        src={"/img/tailwindcss.jpg"}
         alt="tailwind"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={next}
+        src={"/img/nextjs.jpg"}
         alt="next"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={node}
+        src={"/img/nodejs.jpg"}
         alt="node"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={jwt}
+        src={"/img/jwt.jpg"}
         alt="jwt"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={mysql}
+        src={"/img/mysql.jpg"}
         alt="mysql"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={postgres}
+        src={"/img/Postgresql.jpg"}
         alt="postgres"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={mssql}
+        src={"/img/sql-server.jpg"}
         alt="mssql"
         width={150}
         height={150}
         className='hover:scale-105 transition-all'
       />
       <Image
-        src={apollo}
+        src={"/img/apollo.png"}
         alt="apollo"
         width={150}
         height={150}
         className={`hover:scale-105 transition-all ${darkMode ? 'filter invert' : ''}`}
       />
       <Image
-        src={graphql}
+        src={"/img/graphql.png"}
         alt="graphql"
         width={150}
         height={150}
         className={`hover:scale-105 transition-all `}
       />
       <Image
-        src={express}
+        src={"/img/expressjs.jpg"}
         alt="express"
         width={150}
         height={150}
         className={`hover:scale-[1.6] transition-all scale-150`}
       />
         <Image
-        src={prisma}
+        src={"/img/prisma.png"}
         alt="prisma"
         width={150}
         height={150}
         className={`hover:scale-105 transition-all`}
       />
       <Image
-        src={mongodb}
+        src={"/img/mongodb.png"}
         alt="mongo"
         width={150}
         height={150}
         className={`hover:scale-125 transition-all scale-[1.2]`}
       />
        <Image
-        src={aws}
+        src={"/img/aws.png"}
         alt="aws"
         width={150}
         height={150}

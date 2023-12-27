@@ -82,48 +82,48 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     }
 
-    useEffect(() => {
-      const autenticar = async () => {
+    // useEffect(() => {
+    //   const autenticar = async () => {
 
-        const token = localStorage.getItem('token')
-        if(!token) {
-          return router.push('/')
-        }
+    //     const token = localStorage.getItem('token')
+    //     if(!token) {
+    //       return router.push('/')
+    //     }
   
-        const config = {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
+    //     const config = {
+    //       headers: {
+    //         Authorization: `Bearer ${token}`
+    //       }
+    //     }
   
-        const obtenerUsuario = {
-          query: `
-            query obtenerUsuario{
-              obtenerUsuario{
-                id
-                nombre
-              }
-            }
-          `
+    //     const obtenerUsuario = {
+    //       query: `
+    //         query obtenerUsuario{
+    //           obtenerUsuario{
+    //             id
+    //             nombre
+    //           }
+    //         }
+    //       `
           
-        }
+    //     }
   
-        const { data } = await axios.post(serverURL, obtenerUsuario, config)
+    //     const { data } = await axios.post(serverURL, obtenerUsuario, config)
 
-        if(data.errors){
-          router.push('/')
-          setAuth({} as Auth)
+    //     if(data.errors){
+    //       router.push('/')
+    //       setAuth({} as Auth)
           
-          return
-        }
+    //       return
+    //     }
         
-        const usuarioObtenido = data.data.obtenerUsuario
-        setAuth(usuarioObtenido)
-        router.push('/admin')
-      }
-      autenticar()
+    //     const usuarioObtenido = data.data.obtenerUsuario
+    //     setAuth(usuarioObtenido)
+    //     router.push('/admin')
+    //   }
+    //   autenticar()
       
-    },[])
+    // },[])
 
     return (
         <AuthContext.Provider 

@@ -1,4 +1,4 @@
-import emoji from '@/img/emoji.gif'
+
 import Image from 'next/image'
 
 export default function Alerta() {
@@ -13,7 +13,7 @@ export default function Alerta() {
         
         <Image
           className="scale-125"
-          src={emoji}
+          src={"/img/emoji.gif"}
           alt="emoji"
           width={200}
           height={200}

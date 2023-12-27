@@ -1,7 +1,6 @@
 import { Review } from "@/app/types/types"
 import { formatearFecha } from "@/helpers"
 import Image from "next/image";
-import star from '@/img/PowerStar.webp'
 import useApp from "@/hooks/useApp";
 
 export default function Review(review: Review) {
@@ -30,7 +29,7 @@ export default function Review(review: Review) {
               width={10}
               height={10}
               alt="star"
-              src={star}
+              src={"/img/PowerStar.webp"}
             />
 
           ) :
@@ -41,13 +40,13 @@ export default function Review(review: Review) {
                 width={20}
                 height={20}
                 alt="star"
-                src={star}
+                src={"/img/PowerStar.webp"}
               />
               <Image
                 width={20}
                 height={20}
-                alt="star"
-                src={star}
+                alt="/img/PowerStar.webp"
+                src={"/img/PowerStar.webp"}
               />
               
             </div>
@@ -58,20 +57,20 @@ export default function Review(review: Review) {
                 <Image
                   width={20}
                   height={20}
-                  alt="star"
-                  src={star}
+                  alt="/img/PowerStar.webp"
+                  src={"/img/PowerStar.webp"}
                 />
                 <Image
                   width={20}
                   height={20}
-                  alt="star"
-                  src={star}
+                  alt="/img/PowerStar.webp"
+                  src={"/img/PowerStar.webp"}
                 />
                 <Image
                   width={20}
                   height={20}
-                  alt="star"
-                  src={star}
+                  alt="/img/PowerStar.webp"
+                  src={"/img/PowerStar.webp"}
                 />
              
               </div>
@@ -82,26 +81,26 @@ export default function Review(review: Review) {
                   <Image
                     width={20}
                     height={20}
-                    alt="star"
-                    src={star}
+                    alt="/img/PowerStar.webp"
+                    src={"/img/PowerStar.webp"}
                   />
                   <Image
                     width={20}
                     height={20}
-                    alt="star"
-                    src={star}
+                    alt="/img/PowerStar.webp"
+                    src={"/img/PowerStar.webp"}
                   />
                   <Image
                     width={20}
                     height={20}
-                    alt="star"
-                    src={star}
+                    alt="/img/PowerStar.webp"
+                    src={"/img/PowerStar.webp"}
                   />
                   <Image
                     width={20}
                     height={20}
-                    alt="star"
-                    src={star}
+                    alt="/img/PowerStar.webp"
+                    src={"/img/PowerStar.webp"}
                   />
             
                 </div>
@@ -112,32 +111,32 @@ export default function Review(review: Review) {
                       <Image
                         width={20}
                         height={20}
-                        alt="star"
-                        src={star}
+                        alt="/img/PowerStar.webp"
+                        src={"/img/PowerStar.webp"}
                       />
                       <Image
                         width={20}
                         height={20}
-                        alt="star"
-                        src={star}
+                        alt="/img/PowerStar.webp"
+                        src={"/img/PowerStar.webp"}
                       />
                       <Image
                         width={20}
                         height={20}
-                        alt="star"
-                        src={star}
+                        alt="/img/PowerStar.webp"
+                        src={"/img/PowerStar.webp"}
                       />
                       <Image
                         width={20}
                         height={20}
-                        alt="star"
-                        src={star}
+                        alt="/img/PowerStar.webp"
+                        src={"/img/PowerStar.webp"}
                       />
                       <Image
                         width={20}
                         height={20}
-                        alt="star"
-                        src={star}
+                        alt="/img/PowerStar.webp"
+                        src={"/img/PowerStar.webp"}
                       />
                     </div>
                   )

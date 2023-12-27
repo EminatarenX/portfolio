@@ -27,37 +27,17 @@ export default function Header() {
           Inicio
         </Link>
 
-        <Link href={'/about'}
+        <a href="#about"
           onClick={() => setMenu(false)}
           className="text-white font-bold text-2xl hover:text-sky-500 transition-colors"
         >
           Sobre mi
-        </Link>
+        </a>
 
-        <Link href={'/contacto'}
-          onClick={() => setMenu(false)}
-          className="text-white font-bold text-2xl hover:text-sky-500 transition-colors"
-        >
-          Contacto
-        </Link>
 
-        {
-          auth.nombre ? (
-            <button type={'button'}
-            onClick={() => {
-              localStorage.removeItem('token')
-              setAuth({} as Auth)
-              setMenu(false)
-              router.push('/')
-            }}
-            className="text-white font-bold text-2xl hover:text-sky-500 transition-colors text-right"
-          >
-            Cerrar Sesion
-          </button>
-          ) : ''
-        }
+      
       </aside>
-      <header className={` sticky top-0 flex p-5 justify-between ${darkMode ? 'bg-gray-800 ' : 'bg-gradient-to-br from-sky-100 to-sky-500'} `}>
+      <header className={` sticky top-0 flex p-5 justify-between ${darkMode ? 'bg-gray-800 ' : 'bg-gradient-to-br from-sky-100 to-sky-500'} z-10`}>
         <Link href={'/'} className="text-2xl text-white font-bold">EminatarenX</Link>
 
 
@@ -77,17 +57,12 @@ export default function Header() {
             Inicio
           </Link>
 
-          <Link href={'/about'}
+          <a href="#about"
             className="text-white font-bold text-lg hover:text-sky-800 transition-colors"
           >
             Sobre mi
-          </Link>
+          </a>
 
-          <Link href={'/contacto'}
-            className="text-white font-bold text-lg hover:text-sky-800 transition-colors"
-          >
-            Contacto
-          </Link>
         </nav>
       </header>
       <button className="lg:hidden z-20 fixed right-5 top-5 "
