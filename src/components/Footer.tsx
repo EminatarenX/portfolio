@@ -5,7 +5,7 @@ export default function Footer() {
   const { darkMode } = useApp()
   return (
     <footer
-      className={` p-20 ${darkMode ? 'bg-slate-800': 'bg-gradient-to-br from-sky-100 to-sky-500'} text-white text-center`}
+      className={` p-20 ${darkMode ? 'bg-slate-800': 'bg-gradient-to-br from-sky-300 to-sky-600'} text-white text-center`}
 
     >
       <p

@@ -10,13 +10,13 @@ export default function Home( ){
   
 
   return (
-    <main className={`p-20 flex-col ${darkMode ? 'bg-slate-800': 'bg-gradient-to-tr  from-sky-100 to-sky-500'} `}>
+    <main className={`lg:p-20 flex-col ${darkMode ? 'bg-slate-800': 'bg-gradient-to-tr  from-sky-300 to-sky-600'} `}>
       <section className="flex flex-col xl:flex-row justify-around items-center animate-entrada gap-10 p-10 mb-32">
         <article className="flex flex-col">
           
 
             <h1 className={`text-6xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'} `}>
-              Hola, soy <span className={`${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Eminataren</span>
+              <span className={`${darkMode ? 'text-sky-500' : 'text-gray-100'}`}>Emiliano Nataren Del Rivero</span>
             </h1>
             <h2 className={`text-4xl font-bold text-center ${darkMode ? 'text-gray-100' : 'text-sky-950'}`}>
               Full Stack Developer 
@@ -61,8 +61,8 @@ export default function Home( ){
         }
       </section>
 
-      {/* <main id="about" className={`lg:px-20 flex flex-col ${darkMode ? 'bg-slate-800': 'bg-gradient-to-tr  from-sky-100 to-sky-500'} `}> */}
-      <section className="flex flex-col xl:flex-row gap-5 mt-20 justify-evenly items-center  view">
+      {/* <main id="about" className={`lg:px-20 flex flex-col ${darkMode ? 'bg-slate-800': 'bg-gradient-to-tr  from-sky-300 to-sky-600'} `}> */}
+      <section id="about" className="flex flex-col xl:flex-row gap-5 pt-20 justify-evenly items-center  view">
         <article className="flex gap-5 flex-col px-5 lg:px-20 animate-entrada">
           <h3 className={`text-6xl font-bold text-left lg:text-center ${darkMode ? 'text-white': 'text-sky-950'}`}>
             Sobre <span className={`${darkMode ? 'text-sky-500': 'text-sky-600'}`}>mi</span>
@@ -215,7 +215,7 @@ export default function Home( ){
       <section className="flex flex-col justify-around animate-entrada gap-10 mt-20">
        
         
-        <article className="grid grid-cols-4 xl:grid-cols-6 gap-8 mx-4 items-center p-5 ">
+        <article className="grid grid-cols-6 xl:grid-cols-12 gap-4 lg:gap-8 mx-4 items-center p-5 ">
           <Imagenes/>
         </article>
       </section>

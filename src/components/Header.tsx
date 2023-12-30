@@ -37,7 +37,7 @@ export default function Header() {
 
       
       </aside>
-      <header className={` sticky top-0 flex p-5 justify-between ${darkMode ? 'bg-gray-800 ' : 'bg-gradient-to-br from-sky-100 to-sky-500'} z-10`}>
+      <header className={` sticky top-0 flex p-5 justify-between ${darkMode ? 'bg-gray-800 ' : 'bg-gradient-to-br from-sky-300 to-sky-600'} z-10`}>
         <Link href={'/'} className="text-2xl text-white font-bold">EminatarenX</Link>
 
 
